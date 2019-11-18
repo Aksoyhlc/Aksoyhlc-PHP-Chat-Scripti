@@ -30,15 +30,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `ayarlar` (
   `id` int(11) NOT NULL,
-  `site_logo` varchar(400) NOT NULL,
-  `site_baslik` varchar(350) NOT NULL,
-  `site_aciklama` varchar(300) NOT NULL,
-  `site_link` varchar(100) NOT NULL,
-  `site_sahip_mail` varchar(100) NOT NULL,
-  `site_mail_host` varchar(100) NOT NULL,
-  `site_mail_mail` varchar(100) NOT NULL,
-  `site_mail_port` int(11) NOT NULL,
-  `site_mail_sifre` varchar(100) NOT NULL
+  `site_logo` varchar(400) DEFAULT NULL,
+  `site_baslik` varchar(350) DEFAULT NULL,
+  `site_aciklama` varchar(300) DEFAULT NULL,
+  `site_link` varchar(100) DEFAULT NULL,
+  `site_sahip_mail` varchar(100) DEFAULT NULL,
+  `site_mail_host` varchar(100) DEFAULT NULL,
+  `site_mail_mail` varchar(100) DEFAULT NULL,
+  `site_mail_port` int(11) DEFAULT NULL,
+  `site_mail_sifre` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -56,10 +56,10 @@ INSERT INTO `ayarlar` (`id`, `site_logo`, `site_baslik`, `site_aciklama`, `site_
 
 CREATE TABLE `kullanicilar` (
   `kul_id` int(11) NOT NULL,
-  `kul_isim` varchar(200) NOT NULL,
-  `kul_mail` varchar(200) NOT NULL,
-  `kul_sifre` varchar(100) NOT NULL,
-  `kul_telefon` varchar(100) NOT NULL,
+  `kul_isim` varchar(200) DEFAULT NULL,
+  `kul_mail` varchar(200) DEFAULT NULL,
+  `kul_sifre` varchar(100) DEFAULT NULL,
+  `kul_telefon` varchar(100) DEFAULT NULL,
   `kul_yetki` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -79,8 +79,8 @@ INSERT INTO `kullanicilar` (`kul_id`, `kul_isim`, `kul_mail`, `kul_sifre`, `kul_
 
 CREATE TABLE `mesajlar` (
   `mesaj_id` int(11) NOT NULL,
-  `mesaj_gonderen` int(11) NOT NULL,
-  `mesaj_detay` text NOT NULL,
+  `mesaj_gonderen` int(11) DEFAULT NULL,
+  `mesaj_detay` text DEFAULT NULL,
   `mesaj_eklenme_tarih` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -91,23 +91,6 @@ CREATE TABLE `mesajlar` (
 INSERT INTO `mesajlar` (`mesaj_id`, `mesaj_gonderen`, `mesaj_detay`, `mesaj_eklenme_tarih`) VALUES
 (79, 1, 'qeqwe', '2019-11-17 16:01:40'),
 (80, 1, 'qwe', '2019-11-17 16:01:44'),
-(81, 1, 'qweqwe', '2019-11-17 16:04:03'),
-(82, 1, 'qwewqe', '2019-11-17 16:04:15'),
-(83, 1, 'qweqwe', '2019-11-17 16:04:17'),
-(84, 1, '123213', '2019-11-17 16:04:20'),
-(85, 1, 'asdsad', '2019-11-17 16:04:22'),
-(86, 1, 'asdasd', '2019-11-17 16:04:44'),
-(87, 1, 'test', '2019-11-17 17:10:28'),
-(88, 1, 'fadasd', '2019-11-17 17:22:41'),
-(89, 1, 'asd', '2019-11-17 17:22:57'),
-(90, 1, 'xxxxxx', '2019-11-17 17:23:00'),
-(91, 1, 'asdasd', '2019-11-17 17:29:45'),
-(92, 1, 'asd', '2019-11-17 17:29:56'),
-(93, 1, 'asd', '2019-11-17 17:30:01'),
-(94, 1, 'sdf', '2019-11-17 17:30:05'),
-(95, 1, 'asdasd', '2019-11-17 17:30:09'),
-(96, 1, 'asd', '2019-11-17 17:32:20'),
-(97, 1, 'sdf', '2019-11-17 22:33:14');
 
 --
 -- Dökümü yapılmış tablolar için indeksler

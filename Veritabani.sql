@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 18 Kas 2019, 18:41:56
+-- Üretim Zamanı: 18 Kas 2019, 22:10:27
 -- Sunucu sürümü: 10.1.38-MariaDB
 -- PHP Sürümü: 7.3.3
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `ayarlar` (
   `id` int(11) NOT NULL,
-  `site_logo` varchar(400) DEFAULT NULL,
+  `site_logo` varchar(400) NOT NULL,
   `site_baslik` varchar(350) DEFAULT NULL,
   `site_aciklama` varchar(300) DEFAULT NULL,
   `site_link` varchar(100) DEFAULT NULL,
@@ -91,6 +91,7 @@ CREATE TABLE `mesajlar` (
 INSERT INTO `mesajlar` (`mesaj_id`, `mesaj_gonderen`, `mesaj_detay`, `mesaj_eklenme_tarih`) VALUES
 (79, 1, 'qeqwe', '2019-11-17 16:01:40'),
 (80, 1, 'qwe', '2019-11-17 16:01:44'),
+(97, 2, 'sdf', '2019-11-17 22:33:14');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
